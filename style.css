@@ -6,11 +6,6 @@ html, body {
     background-attachment: fixed;
 }
 
-.container\mt-5\mb-5 {
-    float: center;
-    background-color: lightgray;
-}
-
 /* Navbar */
 .custom-border {
     border-bottom: 3px solid black;
@@ -18,30 +13,55 @@ html, body {
 
 .custom-background {
     background-color: black;
-    padding: 10px;
+    padding: 5px;
 }
 
 h2 {
     border-bottom: 1px solid lightgray;
 }
 
-.section {
-    background-color: lightskyblue;
-    width: 50px;
-}
-
 hr {
     color: 3px solid black;
 }
-
 
 .col-xs-12\col-sm-12 {
     margin: auto;
 }
 
-.btn {
-    text-align: center;
+/* Password Section & Fields */
+section {
+    margin-top: 115px;
     float: center;
+    background-color: rgb(93, 169, 216);
+    width: 450px;
+    height: 400px;
+    margin-left: 625px;
+    border: 3px solid #777777;
+    border-radius: 15px;
+}
+
+.container\mt-5\mb-5 {
+    float: center;
+    background-color: lightgray;
+}
+
+#generate {
+    margin-top: 10px;
+    margin-left: 6px;
+    float: center;
+}
+
+#clipboard {
+    margin-top: 10px;
+    float: center;
+}
+
+#textAreaRow {
+    margin-left: 15px;
+}
+
+::placeholder {
+    text-align: center;
 }
 
 /* Footer styling */

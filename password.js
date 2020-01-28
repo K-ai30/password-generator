@@ -1,78 +1,79 @@
-
 // Variables for end user selections
-var option1 = document.querySelector("#uppercase");
-var option2 = document.querySelector("#lowercase");
-var option3 = document.querySelector("numbers");
-var option4 = document.querySelector("symbols");
+var upperCaseElement = document.querySelector("#uppercase");  // false | true
+var lowerCaseElement = document.querySelector("#lowercase");
+var numberElement = document.querySelector("#numbers");
+var symbolElement = document.querySelector("#symbols");
+var length = document.querySelector("#length");
+var generateButton = document.querySelector("#generate");
+var result = document.querySelector("#result");
+
+// Global variables
+var isUpperCase = true;
+var isLowerCase = true;
+var isNumbers = true;
+var isSymbols = true;
 
 // Make an array for all the possible characters used to make up the password
-let alphabet = "abcdefghijklmnopqrstuvyxz"
-let numbers = "0123456789"
-let symbols = "~`!@#$%^&*()_-+=?"
+let alphabet = "abcdefghijklmnopqrstuvyxz";
+let numbers = "0123456789";
+let symbols = "~`!@#$%^&*()_-+=?";
 
-// This indicates what to do with number strings and splitting into an array
-let lowerCase = alphabet.split();
-console.log(lowerCase);
-let upperCase = alphabet.toUpperCase().split("");
-console.log(upperCase);
-let numberOptions = numbers.split();
-console.log(numberOptions);
-let symbolOptions = symbols.split();
-console.log(symbolOptions);
+// Generate the password
+generateButton.addEventListener('click', function(event) {
+    console.log('Value: ', length.value);
+    generateUserPassword();
+});
 
-let userInput = prompt("enter password length")  // Returns a string
+upperCaseElement.addEventListener('change', function() {
+    isUpperCase = upperCaseElement.checked;  // reset
+});
 
-// Console.log all items to ensure they are working
-console.log("#uppercase", option1);
-console.log("#lowercase", option2);
-console.log("#numbers", option3);
-console.log("#symbol", option4);
+lowerCaseElement.addEventListener('change', function() {
+    isLowerCase = lowerCaseElement.checked;
+});
 
-console.log(lowerCase);
-console.log(upperCase);
-console.log(numbers);
-console.log(symbols);
+numberElement.addEventListener('change', function() {
+    isNumbers = numberElement.checked;
+});
 
-console.log(Math.floor(Math.random() * 26));
-console.log(Math.floor(Math.random() * 10));
-console.log(Math.floor(Math.random() * 17));
+symbolElement.addEventListener('change', function() {
+    isSymbols = symbolElement.checked;
+});
 
-// Random number from 0 to 25
-let randomIndex = Math.floor(Math.random() * 26);
+let userLength = 8;  // Min Value hard coded
 
-function generatepassword(userInput, character, length) {
-    for(let i=0; i <userInput; i++);
-        var randomLetter = character[Math.floor(Math.random()*length)]
-}
-// If conditions
-if (userInput < 8) {
-    alert("Your password is too short")
+function copyToClipboard() {
+    var textArea = document.querySelector("#result");
+    textArea.select();
+    document.execCommand('copy');
 }
 
-else if (userInput > 128) {
-    alert("Your password is too long")
-}
+function generateUserPassword() {
+    var password = '';
 
-if (option1.checked === true) {
-    console.log("Working");
-}
-if (option2.checked === true) {
-    console.log("Working");
-}
-if (option3.checked === true) {
-    console.log("Working");
-}
-if (option4.checked === true) {
-    console.log("Working");
-}
+    for (var i = 0; i < userLength; i++) {
+        var randomLetterNumber = Math.floor(Math.random() * alphabet.length); // 0
+        var letter = alphabet[randomLetterNumber];
+        password += letter;
+    }
 
-let wordbank = [];
+    if (isUpperCase === true) {
+        var randomLetterNumber = Math.floor(Math.random() * alphabet.length); // 0
+        var letter = alphabet[randomLetterNumber].toUpperCase();
+        password += letter;
+    }
 
-//Arrays I made
-wordbank.push(){
-    console.log(wordbank);
-}
+    if (isNumbers === true) {
+        var randomNumber = Math.floor(Math.random() * numbers.length); // 0
+        var num = numbers[randomNumber];
+        password += num;
+    }
 
-
-
-// Create a for loop to select 10 characters from the array
+    if (isSymbols === true) {
+        var randomSymbolNumber = Math.floor(Math.random() * symbols.length); // 0
+        var symbol = symbols[randomSymbolNumber];
+        password += symbol + num + letter;
+        console.log(password);
+        result.innerHTML = password;
+    }
+};
