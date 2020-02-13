@@ -34,7 +34,7 @@ I started building this application for an end-user in an effort to provide a so
 
 ### Contributors
 
-The original contributors to this project are the following full stack developers:
+The original contributor to this project is the following full stack developer:
 
 - Alia Kyle Perry
 
