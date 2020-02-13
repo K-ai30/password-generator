@@ -1,5 +1,4 @@
 # Password Generator
----
 
 ### Description
 
