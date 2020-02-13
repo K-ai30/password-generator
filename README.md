@@ -30,7 +30,7 @@ The user can designate which characters they want to include in their password, 
 Additional features include the option to copy the password to the user's "clipboard" to paste in another area/window.
 
 ### Notes
-I started building this application for an end-user in an effort to provide a solution to a daily need. To that end, we hope to achieve some future dated development ideas that will enhance the user engagement with the application.
+I started building this application for an end-user in an effort to provide a solution to a daily need. To that end, I hope to achieve some future dated development ideas that will enhance the user engagement with the application.
 
 ### Contributors
 
